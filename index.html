@@ -1,0 +1,3307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#5bbcb0">
+  <meta name="description"
+    content="Crozy Crochet – Handmade crochet flowers, bouquets & gifts made with love. Order via WhatsApp!">
+  <title>Crozy Crochet 🧶 – Handmade with Love</title>
+
+  <!-- Preconnect for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="logo 2.png" fetchpriority="high">
+  <link rel="preload" as="image" href="bs1.png">
+  <link rel="preload" as="image" href="bs2.png">
+  <link rel="preload" as="image" href="bs3.png">
+  <!-- Only load weights actually used -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Dancing+Script:wght@600;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Dancing+Script:wght@600;700&display=swap"
+      rel="stylesheet">
+  </noscript>
+
+  <style>
+    /* ========== CRITICAL CSS (above the fold) ========== */
+    :root {
+      --cream: #f5ede3;
+      --teal: #5bbcb0;
+      --teal-dark: #3a9a8e;
+      --teal-light: #a8ddd8;
+      --pink: #f0a0a8;
+      --pink-light: #fce4e8;
+      --rose: #e8788a;
+      --green: #6aad7e;
+      --warm: #c4956a;
+      --text-dark: #2d4a3e;
+      --text-mid: #5a7a6e;
+      --white: #fffdf9;
+      --shadow: 0 8px 32px rgba(91, 188, 176, .18);
+      --shadow-3d: 0 20px 60px rgba(44, 74, 62, .15), 0 4px 16px rgba(91, 188, 176, .12);
+      --transition-fast: 0.2s ease;
+      --transition-med: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      /* GPU compositing layer for smooth scroll */
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-y: contain;
+    }
+
+    /* ===== IMAGES: global optimizations ===== */
+    img {
+      display: block;
+      max-width: 100%;
+      /* prevent layout shift while loading */
+      height: auto;
+      /* hardware-accelerated rendering */
+      will-change: auto;
+      /* crisp on mobile retina */
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    /* Skeleton shimmer for image placeholders */
+    .img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--pink-light), #d8f0ee);
+    }
+
+    .img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.55) 50%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmerLoad 1.4s ease infinite;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.4s;
+    }
+
+    .img-wrap.loaded::after {
+      opacity: 0;
+    }
+
+    @keyframes shimmerLoad {
+      0% {
+        background-position: -200% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 253, 249, .93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(91, 188, 176, .2);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 20px rgba(91, 188, 176, .12);
+      /* keep on GPU layer */
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    .navbar.scrolled {
+      padding: 7px 16px;
+      background: rgba(255, 253, 249, .98);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(91, 188, 176, .4));
+    }
+
+    .nav-brand {
+      font-family: 'Dancing Script', cursive;
+      font-size: 22px;
+      color: var(--teal-dark);
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 5px 8px;
+      border-radius: 20px;
+      transition: background var(--transition-fast), color var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      background: var(--teal-light);
+      color: var(--teal-dark);
+    }
+
+    .cart-btn {
+      background: var(--teal);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 3px 10px rgba(91, 188, 176, .4);
+      transition: background var(--transition-fast), transform var(--transition-fast);
+      /* tap highlight off for mobile */
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .cart-btn:hover {
+      background: var(--teal-dark);
+      transform: translateY(-1px);
+    }
+
+    .cart-btn:active {
+      transform: scale(0.96);
+    }
+
+    .cart-count {
+      background: var(--rose);
+      color: white;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100svh;
+      /* safe viewport height on mobile */
+      background: linear-gradient(135deg, #fce4e8 0%, #f5ede3 40%, #d8f0ee 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 20px 60px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      contain: layout style;
+      /* CSS containment for perf */
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(91, 188, 176, .15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(240, 160, 168, .15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-floats {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    /* Use transform3d to keep floats on GPU */
+    .float-el {
+      position: absolute;
+      font-size: 28px;
+      animation: floatAround 6s ease-in-out infinite;
+      opacity: 0.6;
+      will-change: transform;
+    }
+
+    .float-el:nth-child(1) {
+      top: 15%;
+      left: 8%;
+      animation-delay: 0s;
+    }
+
+    .float-el:nth-child(2) {
+      top: 25%;
+      right: 10%;
+      animation-delay: 1s;
+      font-size: 22px;
+    }
+
+    .float-el:nth-child(3) {
+      bottom: 30%;
+      left: 5%;
+      animation-delay: 2s;
+      font-size: 20px;
+    }
+
+    .float-el:nth-child(4) {
+      bottom: 20%;
+      right: 8%;
+      animation-delay: .5s;
+    }
+
+    .float-el:nth-child(5) {
+      top: 50%;
+      left: 3%;
+      animation-delay: 3s;
+      font-size: 16px;
+    }
+
+    .float-el:nth-child(6) {
+      top: 60%;
+      right: 5%;
+      animation-delay: 1.5s;
+      font-size: 18px;
+    }
+
+    @keyframes floatAround {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+
+      33% {
+        transform: translate3d(0, -14px, 0) rotate(5deg);
+      }
+
+      66% {
+        transform: translate3d(0, 8px, 0) rotate(-3deg);
+      }
+    }
+
+    /* Reduce hero animations on low-power mode */
+    @media (prefers-reduced-motion: reduce) {
+
+      .float-el,
+      .hero-logo,
+      .custom-link {
+        animation: none !important;
+      }
+    }
+
+    .hero-logo-wrap {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .hero-logo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 30px rgba(91, 188, 176, .5)) drop-shadow(0 4px 8px rgba(0, 0, 0, .1));
+      animation: logoBob 3s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    @keyframes logoBob {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate3d(0, -8px, 0) scale(1.02);
+      }
+    }
+
+    .hero-badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: var(--rose);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      animation: pulse 2s ease-in-out infinite;
+      white-space: nowrap;
+      will-change: transform;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+      background: rgba(91, 188, 176, .1);
+      padding: 5px 16px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(38px, 10vw, 64px);
+      color: var(--text-dark);
+      line-height: 1.1;
+      margin-bottom: 10px;
+      text-shadow: 2px 4px 12px rgba(91, 188, 176, .2);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      max-width: 340px;
+      margin: 0 auto 28px;
+      font-weight: 500;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 6px 24px rgba(91, 188, 176, .45);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .btn-primary:hover {
+      transform: translate3d(0, -3px, 0) scale(1.03);
+      box-shadow: 0 12px 36px rgba(91, 188, 176, .5);
+    }
+
+    .btn-primary:active {
+      transform: scale(0.96);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--teal-dark);
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 2px solid var(--teal-light);
+      box-shadow: 0 4px 16px rgba(91, 188, 176, .15);
+      transition: border-color var(--transition-fast), transform var(--transition-fast);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--teal);
+      transform: translate3d(0, -2px, 0);
+    }
+
+    /* Bestsellers strip */
+    .hero-bestsellers {
+      background: rgba(255, 255, 255, .7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 20px 16px;
+      border: 1px solid rgba(91, 188, 176, .2);
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .bs-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--rose);
+      margin-bottom: 14px;
+    }
+
+    .bs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .bs-item {
+      background: var(--cream);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+      cursor: pointer;
+      transition: transform var(--transition-fast);
+      border: 1px solid rgba(91, 188, 176, .1);
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .bs-item:hover {
+      transform: translate3d(0, -4px, 0) scale(1.02);
+    }
+
+    .bs-item:active {
+      transform: scale(0.97);
+    }
+
+    .bs-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+      display: block;
+      background: linear-gradient(135deg, var(--pink-light), #d8f0ee);
+      padding: 4px;
+    }
+
+    .bs-name {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-dark);
+      padding: 6px 6px 2px;
+      text-align: center;
+    }
+
+    .bs-price {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      padding: 0 6px 8px;
+      text-align: center;
+    }
+
+    /* Custom link */
+    .custom-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--pink), var(--rose));
+      color: white;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(232, 120, 138, .4);
+      margin-top: 16px;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      animation: shimmerGlow 3s ease-in-out infinite;
+      will-change: box-shadow;
+    }
+
+    .custom-link:hover {
+      transform: translate3d(0, -2px, 0);
+      box-shadow: 0 8px 26px rgba(232, 120, 138, .5);
+    }
+
+    @keyframes shimmerGlow {
+
+      0%,
+      100% {
+        box-shadow: 0 4px 18px rgba(232, 120, 138, .4);
+      }
+
+      50% {
+        box-shadow: 0 4px 28px rgba(232, 120, 138, .7);
+      }
+    }
+
+    /* ========== SECTION BASE ========== */
+    .section {
+      padding: 60px 16px;
+      position: relative;
+      contain: layout;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .section-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--teal);
+      background: rgba(91, 188, 176, .1);
+      padding: 4px 14px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(30px, 8vw, 48px);
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    /* ========== PRODUCTS ========== */
+    .products-bg {
+      background: linear-gradient(180deg, var(--white) 0%, #edf7f6 100%);
+    }
+
+    .tabs-wrap {
+      display: flex;
+      gap: 8px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 28px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+    }
+
+    .tabs-wrap::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      white-space: nowrap;
+      padding: 9px 18px;
+      border-radius: 25px;
+      border: 2px solid var(--teal-light);
+      background: white;
+      color: var(--text-mid);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .tab-btn.active {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+      box-shadow: 0 4px 14px rgba(91, 188, 176, .4);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .07);
+      transition: transform var(--transition-med), box-shadow var(--transition-med);
+      cursor: pointer;
+      position: relative;
+      border: 1px solid rgba(91, 188, 176, .1);
+      /* 3D perspective transform on hover */
+      transform-style: preserve-3d;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .product-card:hover {
+      transform: translate3d(0, -6px, 0) scale(1.02) rotateX(1deg);
+      box-shadow: var(--shadow-3d);
+    }
+
+    .product-card:active {
+      transform: scale(0.97);
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(91, 188, 176, .05), transparent);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Product image wrapper with lazy-load skeleton */
+    .prod-img {
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, var(--pink-light) 0%, #d8f0ee 100%);
+    }
+
+    .prod-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* No opacity:0 — images appear immediately as bytes arrive */
+      display: block;
+    }
+
+    /* No shimmer animation — removed for perf */
+    .prod-img.img-done::before {
+      display: none;
+    }
+
+    .prod-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: var(--rose);
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 10px;
+      z-index: 3;
+    }
+
+    .prod-body {
+      padding: 10px 10px 12px;
+    }
+
+    .prod-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 3px;
+      line-height: 1.3;
+    }
+
+    .prod-desc {
+      font-size: 10px;
+      color: var(--text-mid);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .prod-price {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      margin-bottom: 8px;
+    }
+
+    .prod-btns {
+      display: flex;
+      gap: 5px;
+    }
+
+    .add-cart {
+      flex: 1;
+      background: var(--teal);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 8px 4px;
+      cursor: pointer;
+      transition: background var(--transition-fast);
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .add-cart:hover {
+      background: var(--teal-dark);
+    }
+
+    .add-cart:active {
+      transform: scale(0.95);
+    }
+
+    .buy-now {
+      flex: 1;
+      background: transparent;
+      color: var(--rose);
+      border: 2px solid var(--rose);
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 6px 4px;
+      cursor: pointer;
+      transition: background var(--transition-fast), color var(--transition-fast);
+      text-decoration: none;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .buy-now:hover {
+      background: var(--rose);
+      color: white;
+    }
+
+    .buy-now:active {
+      transform: scale(0.95);
+    }
+
+    /* ========== GIFT SECTION ========== */
+    .gift-bg {
+      background: linear-gradient(135deg, #fff0f3 0%, var(--cream) 50%, #e8f7f5 100%);
+    }
+
+    .gift-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .gift-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition-med), box-shadow var(--transition-med);
+      border: 1px solid rgba(240, 160, 168, .2);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .gift-card:hover {
+      transform: translate3d(0, -5px, 0) rotateX(2deg);
+      box-shadow: var(--shadow-3d);
+    }
+
+    .gift-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: linear-gradient(135deg, #fce4e8, #d8f0ee);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gift-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+      display: block;
+    }
+
+    .gift-body {
+      padding: 12px;
+    }
+
+    .gift-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 3px;
+    }
+
+    .gift-desc {
+      font-size: 11px;
+      color: var(--text-mid);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .gift-price {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--rose);
+      margin-bottom: 10px;
+    }
+
+    .gift-btns {
+      display: flex;
+      gap: 6px;
+    }
+
+    /* ========== COUPLE SECTION ========== */
+    .couple-bg {
+      background: linear-gradient(160deg, #ffe8ec 0%, var(--white) 60%, #d8f0ee 100%);
+    }
+
+    .couple-header .section-title {
+      color: var(--rose);
+    }
+
+    .couple-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .couple-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition-med), box-shadow var(--transition-med);
+      border: 1px solid rgba(232, 120, 138, .15);
+      position: relative;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .couple-card:hover {
+      transform: translate3d(0, -6px, 0);
+      box-shadow: var(--shadow-3d);
+    }
+
+    .couple-ribbon {
+      position: absolute;
+      top: 12px;
+      left: -2px;
+      background: var(--rose);
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 12px 3px 8px;
+      border-radius: 0 10px 10px 0;
+      z-index: 2;
+    }
+
+    .couple-img {
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffe8ec, #fce4e8);
+    }
+
+    .couple-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .couple-body {
+      padding: 12px;
+    }
+
+    .couple-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+
+    .couple-sub {
+      font-size: 10px;
+      color: var(--rose);
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+
+    .couple-price {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      margin-bottom: 8px;
+    }
+
+    /* ========== CUSTOMISE SECTION ========== */
+    .custom-bg {
+      background: linear-gradient(160deg, #e8f7f5 0%, var(--cream) 100%);
+    }
+
+    .custom-container {
+      background: white;
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow: var(--shadow-3d);
+      border: 1px solid rgba(91, 188, 176, .15);
+    }
+
+    .custom-step {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px dashed rgba(91, 188, 176, .2);
+    }
+
+    .custom-step:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .step-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /* Upload area */
+    .upload-area {
+      border: 2px dashed var(--teal-light);
+      border-radius: 16px;
+      padding: 28px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+      background: rgba(91, 188, 176, .04);
+      position: relative;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .upload-area:hover {
+      border-color: var(--teal);
+      background: rgba(91, 188, 176, .08);
+    }
+
+    .upload-area input[type="file"] {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 2;
+      /* allow all image types including HEIC on iOS */
+      font-size: 16px;
+      /* prevents iOS zoom on input */
+    }
+
+    .upload-icon {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+
+    .upload-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-mid);
+      margin-bottom: 4px;
+    }
+
+    .upload-hint {
+      font-size: 11px;
+      color: #aaa;
+    }
+
+    .upload-preview {
+      margin-top: 12px;
+      display: none;
+    }
+
+    .upload-preview img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid var(--teal-light);
+      margin: 0 auto;
+    }
+
+    /* Upload progress bar */
+    .upload-progress {
+      display: none;
+      margin-top: 10px;
+      height: 4px;
+      background: rgba(91, 188, 176, .2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .upload-progress-bar {
+      height: 100%;
+      background: var(--teal);
+      border-radius: 4px;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .upload-progress.active {
+      display: block;
+    }
+
+    /* Describe box */
+    .describe-box {
+      width: 100%;
+      border: 2px solid var(--teal-light);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-family: 'Quicksand', sans-serif;
+      color: var(--text-dark);
+      resize: vertical;
+      min-height: 90px;
+      transition: border-color var(--transition-fast);
+      outline: none;
+      background: rgba(91, 188, 176, .02);
+      /* prevent iOS auto-zoom */
+      font-size: max(16px, 14px);
+    }
+
+    .describe-box:focus {
+      border-color: var(--teal);
+    }
+
+    /* Product chips */
+    .product-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 7px 14px;
+      border-radius: 20px;
+      border: 2px solid var(--teal-light);
+      background: white;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .chip:hover {
+      border-color: var(--teal);
+      color: var(--teal-dark);
+    }
+
+    .chip.selected {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+    }
+
+    .chip.couple-chip.selected {
+      background: var(--rose);
+      border-color: var(--rose);
+    }
+
+    /* Quantity */
+    .qty-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .qty-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 8px 10px;
+    }
+
+    .qty-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-dark);
+      min-width: 80px;
+    }
+
+    .qty-ctrl {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .qty-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid var(--teal-light);
+      background: white;
+      color: var(--teal-dark);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition-fast), color var(--transition-fast);
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .qty-btn:hover {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+    }
+
+    .qty-val {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+      min-width: 20px;
+      text-align: center;
+    }
+
+    /* Color swatches */
+    .color-swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .swatch {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+      position: relative;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .swatch:hover {
+      transform: scale(1.15);
+    }
+
+    .swatch.selected {
+      border-color: var(--text-dark);
+      transform: scale(1.18);
+    }
+
+    .swatch::after {
+      content: '✓';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: white;
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity 0.2s;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    }
+
+    .swatch.selected::after {
+      opacity: 1;
+    }
+
+    .color-input {
+      width: 100%;
+      border: 2px solid var(--teal-light);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-family: 'Quicksand', sans-serif;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color var(--transition-fast);
+      font-size: max(16px, 13px);
+      /* prevents iOS zoom */
+    }
+
+    .color-input:focus {
+      border-color: var(--teal);
+    }
+
+    /* Submit */
+    .custom-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: white;
+      border: none;
+      border-radius: 18px;
+      padding: 16px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(91, 188, 176, .45);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Quicksand', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .custom-submit:hover {
+      transform: translate3d(0, -2px, 0);
+      box-shadow: 0 10px 32px rgba(91, 188, 176, .55);
+    }
+
+    .custom-submit:active {
+      transform: scale(0.97);
+    }
+
+    /* WhatsApp Image Send Instructions */
+    .wa-send-guide {
+      background: linear-gradient(135deg, #e8f7f0, #d4f5e2);
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 14px;
+      border: 1px solid rgba(37, 211, 102, .2);
+      display: none;
+    }
+
+    .wa-send-guide h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #128C7E;
+      margin-bottom: 8px;
+    }
+
+    .wa-send-guide ol {
+      padding-left: 16px;
+    }
+
+    .wa-send-guide li {
+      font-size: 12px;
+      color: var(--text-mid);
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .wa-send-guide.show {
+      display: block;
+    }
+
+    /* ========== IG / HAPPY CUSTOMERS ========== */
+    .ig-bg {
+      background: linear-gradient(160deg, #fce4e8 0%, var(--cream) 100%);
+    }
+
+    .ig-feed-wrapper {
+      background: white;
+      border-radius: 20px;
+      padding: 20px 16px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      text-align: center;
+      border: 1px solid rgba(240, 160, 168, .2);
+    }
+
+    .ig-feed-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .ig-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .ig-profile-info {
+      text-align: left;
+    }
+
+    .ig-handle {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .ig-tagline {
+      font-size: 11px;
+      color: var(--text-mid);
+    }
+
+    .ig-embed-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .ig-embed-tile {
+      aspect-ratio: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--pink-light), #d8f0ee);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .ig-embed-tile a {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0);
+      transition: background var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .ig-embed-tile a:hover {
+      background: rgba(0, 0, 0, .25);
+    }
+
+    .ig-embed-tile a span {
+      opacity: 0;
+      color: white;
+      font-size: 20px;
+      transition: opacity var(--transition-fast);
+    }
+
+    .ig-embed-tile a:hover span {
+      opacity: 1;
+    }
+
+    .ig-note {
+      font-size: 11px;
+      color: var(--text-mid);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .ig-follow-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+      padding: 15px;
+      border-radius: 18px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(220, 39, 67, .35);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .ig-follow-btn:hover {
+      transform: translate3d(0, -2px, 0);
+      box-shadow: 0 10px 32px rgba(220, 39, 67, .45);
+    }
+
+    .dm-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      padding: 14px;
+      border-radius: 18px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .4);
+      transition: transform var(--transition-fast);
+      margin-top: 12px;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .dm-btn:hover {
+      transform: translate3d(0, -2px, 0);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .testi-card {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+      border-left: 4px solid var(--teal);
+    }
+
+    .testi-stars {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .testi-text {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.5;
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    .testi-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--text-dark);
+      color: rgba(255, 255, 255, .85);
+      padding: 40px 20px 30px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Dancing Script', cursive;
+      font-size: 32px;
+      color: var(--teal-light);
+      margin-bottom: 8px;
+    }
+
+    .footer-sub {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .7);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .footer-links a:hover {
+      color: var(--teal-light);
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .3);
+    }
+
+    /* ========== CART DRAWER ========== */
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .4);
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+    .cart-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: min(360px, 100vw);
+      background: white;
+      z-index: 2001;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: flex;
+      flex-direction: column;
+      will-change: transform;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-head {
+      padding: 20px;
+      border-bottom: 1px solid rgba(91, 188, 176, .2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cart-head h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .close-cart {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-mid);
+      padding: 4px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 40px 16px;
+      color: var(--text-mid);
+      font-size: 14px;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      background: var(--cream);
+      border-radius: 14px;
+      margin-bottom: 10px;
+    }
+
+    .cart-item-icon {
+      font-size: 30px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .cart-item-price {
+      font-size: 12px;
+      color: var(--teal-dark);
+      font-weight: 600;
+    }
+
+    .cart-item-remove {
+      background: none;
+      border: none;
+      color: var(--rose);
+      font-size: 18px;
+      cursor: pointer;
+      padding: 4px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .cart-foot {
+      padding: 16px;
+      border-top: 1px solid rgba(91, 188, 176, .2);
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--text-dark);
+    }
+
+    .checkout-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .4);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    /* ========== TOAST ========== */
+    .toast {
+      position: fixed;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      background: var(--text-dark);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      z-index: 9999;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+      will-change: transform;
+      max-width: 90vw;
+      white-space: normal;
+      text-align: center;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ========== UTILITY ========== */
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--teal-light), transparent);
+    }
+
+    /* Scroll animations — use GPU-composited props only */
+    .fade-up {
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      will-change: opacity, transform;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* Stagger children */
+    .fade-up:nth-child(2) {
+      transition-delay: 0.08s;
+    }
+
+    .fade-up:nth-child(3) {
+      transition-delay: 0.16s;
+    }
+
+    .fade-up:nth-child(4) {
+      transition-delay: 0.24s;
+    }
+
+    /* ========== MODAL ========== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .55);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 20px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 22px;
+      text-align: center;
+      max-width: 340px;
+      width: 100%;
+      transform: scale(0.82);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 24px 60px rgba(44, 74, 62, .22);
+      will-change: transform;
+    }
+
+    .modal-overlay.open .modal {
+      transform: scale(1);
+    }
+
+    .modal-icon {
+      font-size: 54px;
+      margin-bottom: 10px;
+    }
+
+    .modal h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .modal-prod-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      margin-bottom: 4px;
+    }
+
+    .modal-prod-price {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--rose);
+      margin-bottom: 16px;
+    }
+
+    .modal p {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .modal-qty-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 12px 16px;
+      margin-bottom: 14px;
+    }
+
+    .modal-qty-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .modal-qty-ctrl {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .modal-qty-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--teal-light);
+      background: white;
+      color: var(--teal-dark);
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition-fast);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .modal-qty-btn:hover {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+    }
+
+    .modal-qty-val {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      min-width: 28px;
+      text-align: center;
+    }
+
+    .modal-name-input {
+      width: 100%;
+      border: 2px solid var(--teal-light);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: max(16px, 14px);
+      font-family: 'Quicksand', sans-serif;
+      color: var(--text-dark);
+      outline: none;
+      margin-bottom: 16px;
+      transition: border-color var(--transition-fast);
+      background: rgba(91, 188, 176, .03);
+    }
+
+    .modal-name-input:focus {
+      border-color: var(--teal);
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .modal-btn-ig {
+      width: 100%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, .35);
+      transition: transform var(--transition-fast);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .modal-btn-ig:hover {
+      transform: translate3d(0, -2px, 0);
+    }
+
+    .modal-btn {
+      background: var(--teal);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      padding: 12px 28px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      width: 100%;
+    }
+
+    .modal-btn-cancel {
+      background: var(--cream);
+      color: var(--text-mid);
+      border: 2px solid #e0d6cc;
+      border-radius: 14px;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      width: 100%;
+      transition: background var(--transition-fast);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .modal-btn-cancel:hover {
+      background: #ebe3d9;
+    }
+
+    /* WhatsApp Sticky */
+    .wa-sticky {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1500;
+      background: #25D366;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .5);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      font-family: 'Quicksand', sans-serif;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      will-change: transform;
+    }
+
+    .wa-sticky:hover {
+      transform: translate3d(0, -3px, 0) scale(1.04);
+      box-shadow: 0 10px 32px rgba(37, 211, 102, .65);
+    }
+
+    /* IG feed section */
+    .ig-feed-wrapper {
+      background: white;
+      border-radius: 20px;
+      padding: 20px 16px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      text-align: center;
+      border: 1px solid rgba(240, 160, 168, .2);
+    }
+
+    .ig-feed-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    /* ========== RESPONSIVE ========== */
+
+    /* Tiny phones: single column gifts/couples */
+    @media (max-width: 360px) {
+
+      .gift-grid,
+      .couple-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Small phones (361-479px): product grid stays 2-col (default) */
+
+    /* Mid phones / large phones (480px+): 3 product columns */
+    @media (min-width: 480px) {
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Tablets (600px+) */
+    @media (min-width: 600px) {
+      .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .gift-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .couple-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .bs-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      .hero-bestsellers {
+        max-width: 700px;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .product-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .section {
+        padding: 80px 32px;
+      }
+
+      .section-sub {
+        max-width: 460px;
+      }
+
+      .custom-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .ig-embed-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .product-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
+    /* 3D card tilt — desktop only, reduces on mobile for perf */
+    @media (hover: hover) and (pointer: fine) {
+      .product-card {
+        perspective: 600px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="mainNav">
+    <div class="nav-logo">
+      <img src="logo 2.png" alt="Crozy Crochet Logo" width="44" height="44" loading="eager">
+      <span class="nav-brand">Crozy Crochet</span>
+    </div>
+    <div class="nav-links">
+      <a href="#products">Shop</a>
+      <a href="#gifts">Gifts</a>
+      <a href="#customise">Custom</a>
+    </div>
+    <button class="cart-btn" onclick="openCart()" aria-label="Open cart">
+      🛒 <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-floats" aria-hidden="true">
+      <span class="float-el">🌸</span>
+      <span class="float-el">✨</span>
+      <span class="float-el">🦋</span>
+      <span class="float-el">🌷</span>
+      <span class="float-el">💕</span>
+      <span class="float-el">🍀</span>
+    </div>
+    <div class="hero-logo-wrap">
+      <img src="logo 2.png" class="hero-logo" alt="Crozy Crochet Logo" width="150" height="150" loading="eager"
+        fetchpriority="high">
+      <div class="hero-badge">🔥 Handmade</div>
+    </div>
+    <div class="hero-tag">🧶 Handcrafted with Love</div>
+    <h1>Crozy<br>Crochet</h1>
+    <p class="hero-sub">Beautiful handmade crochet creations — flowers, bouquets &amp; more. Every stitch made with love
+      💕</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">🛍️ Shop Now</a>
+      <a href="https://www.instagram.com/crozycrochet_" target="_blank" rel="noopener" class="btn-secondary">📸
+        Instagram</a>
+    </div>
+    <a href="#customise" class="custom-link">✨ Create Your Custom Order →</a>
+
+    <!-- Bestsellers -->
+    <div class="hero-bestsellers" style="margin-top:32px">
+      <div class="bs-title">⭐ Our Most Loved Creations</div>
+      <div class="bs-grid">
+        <div class="bs-item" onclick="addToCart('Blossom Bouquet','🌸','₹699')" role="button" tabindex="0">
+          <img src="bs1.png" alt="Blossom Bouquet" class="bs-img" loading="eager" width="100" height="100">
+          <div class="bs-name">Blossom Bouquet</div>
+          <div class="bs-price">₹699</div>
+        </div>
+        <div class="bs-item" onclick="addToCart('Dreamy Lily','🌷','₹499')" role="button" tabindex="0">
+          <img src="bs2.png" alt="Dreamy Lily" class="bs-img" loading="eager" width="100" height="100">
+          <div class="bs-name">Dreamy Lily</div>
+          <div class="bs-price">₹499</div>
+        </div>
+        <div class="bs-item" onclick="addToCart('Sweet Rose','🌹','₹799')" role="button" tabindex="0">
+          <img src="bs3.png" alt="Sweet Rose" class="bs-img" loading="eager" width="100" height="100">
+          <div class="bs-name">Sweet Rose</div>
+          <div class="bs-price">₹799</div>
+        </div>
+        <div class="bs-item" onclick="addToCart('Sunflower Joy','🌻','₹299')" role="button" tabindex="0">
+          <img src="bs4.png" alt="Sunflower Joy" class="bs-img" loading="lazy" width="100" height="100">
+          <div class="bs-name">Sunflower Joy</div>
+          <div class="bs-price">₹299</div>
+        </div>
+        <div class="bs-item" onclick="addToCart('Sunflower theory','🌼','₹449')" role="button" tabindex="0">
+          <img src="bs5.png" alt="Sunflower theory" class="bs-img" loading="lazy" width="100" height="100">
+          <div class="bs-name">Sunflower theory</div>
+          <div class="bs-price">₹449</div>
+        </div>
+        <div class="bs-item" onclick="addToCart('Lotus Love','🪷','₹199')" role="button" tabindex="0">
+          <img src="bs6.png" alt="Lotus Love" class="bs-img" loading="lazy" width="100" height="100">
+          <div class="bs-name">Lotus Love</div>
+          <div class="bs-price">₹199</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 2: PRODUCTS -->
+  <section class="section products-bg" id="products">
+    <div class="section-header fade-up">
+      <div class="section-tag">🛍️ Collections</div>
+      <h2 class="section-title">Shop by Category</h2>
+      <p class="section-sub">Handpicked collections made just for you</p>
+    </div>
+
+    <div class="tabs-wrap fade-up">
+      <button class="tab-btn active" onclick="switchTab('girly', this)">🌸 Girly Selection</button>
+      <button class="tab-btn" onclick="switchTab('bigboy', this)">🐻 Big Boy Collection</button>
+    </div>
+
+    <!-- GIRLY TAB -->
+    <div class="tab-content active" id="tab-girly">
+      <div class="product-grid">
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="g2.png" alt="Mini Purse" loading="lazy" width="200" height="200">
+            <div class="prod-badge">New</div>
+          </div>
+          <div class="prod-body">
+            <div class="prod-name">Mini Purse</div>
+            <div class="prod-desc">Soft crochet roses, perfect for gifting</div>
+            <div class="prod-price">₹149</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Mini Purse','🌸','₹149')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Mini Purse','₹149')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="g1.png" alt="Baby Elephant" loading="lazy" width="200" height="200"></div>
+          <div class="prod-body">
+            <div class="prod-name">Baby Elephant</div>
+            <div class="prod-desc">Cute baby elephant crochet toy</div>
+            <div class="prod-price">₹899</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Baby Elephant','🐘','₹899')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Baby Elephant','₹899')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="g3.png" alt="Evil Eye" loading="lazy" width="200" height="200">
+            <div class="prod-badge">❤️</div>
+          </div>
+          <div class="prod-body">
+            <div class="prod-name">Evil Eye</div>
+            <div class="prod-desc">Protective charm with a mystical look</div>
+            <div class="prod-price">₹299</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Evil Eye','🌷','₹299')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Evil Eye','₹299')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="g4.png" alt="SunFlower keychain" loading="lazy" width="200" height="200">
+          </div>
+          <div class="prod-body">
+            <div class="prod-name">SunFlower keychain</div>
+            <div class="prod-desc">Bright and cheerful sunflower keychain</div>
+            <div class="prod-price">₹149</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('SunFlower keychain','🌼','₹149')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('SunFlower keychain','₹149')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="g5.png" alt="Pastel Bouquet" loading="lazy" width="200" height="200">
+            <div class="prod-badge">Top</div>
+          </div>
+          <div class="prod-body">
+            <div class="prod-name">Pastel Bouquet</div>
+            <div class="prod-desc">Mixed pastel flowers, always blooming</div>
+            <div class="prod-price">₹449</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Pastel Bouquet','💐','₹449')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Pastel Bouquet','₹449')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="g6.png" alt="Book cover with Panda" loading="lazy" width="200" height="200">
+          </div>
+          <div class="prod-body">
+            <div class="prod-name">Book cover with Panda</div>
+            <div class="prod-desc">Cute panda book cover for daily essentials</div>
+            <div class="prod-price">₹449</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Book cover with Panda','🐼','₹449')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Book cover with Panda','₹449')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="g7.png" alt="Cute Little Flower Keychain" loading="lazy" width="200"
+              height="200"></div>
+          <div class="prod-body">
+            <div class="prod-name">Cute Little Flower Keychain</div>
+            <div class="prod-desc">Adorable keychain with a little flower design</div>
+            <div class="prod-price">₹149</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Cute Little Flower Keychain','🪷','₹149')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Cute Little Flower Keychain','₹149')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="g8.png" alt="Demogorgon" loading="lazy" width="200" height="200"></div>
+          <div class="prod-body">
+            <div class="prod-name">Demogorgon</div>
+            <div class="prod-desc">A mysterious creature from the Upside Down</div>
+            <div class="prod-price">₹399</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Demogorgon','👹','₹399')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Demogorgon','₹399')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="g9.png" alt="Flower Valley Protecter" loading="lazy" width="200" height="200">
+          </div>
+          <div class="prod-body">
+            <div class="prod-name">Flower Valley Protecter</div>
+            <div class="prod-desc">Protect your Wire with this cute Valley protector</div>
+            <div class="prod-price">₹299</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Flower Valley Protecter','💐','₹299')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Flower Valley Protecter','₹299')">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BIG BOY TAB -->
+    <div class="tab-content" id="tab-bigboy">
+      <div class="product-grid">
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="b1.png" alt="SpiderMan Tote Bag" loading="lazy" width="200" height="200">
+            <div class="prod-badge">Cute</div>
+          </div>
+          <div class="prod-body">
+            <div class="prod-name">SpiderMan Tote Bag</div>
+            <div class="prod-desc">Stylish tote bag with SpiderMan design</div>
+            <div class="prod-price">₹799</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('SpiderMan Tote Bag','🕷️','₹799')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('SpiderMan Tote Bag','₹799')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="b2.png" alt="Deadpool Keychain" loading="lazy" width="200" height="200"></div>
+          <div class="prod-body">
+            <div class="prod-name">Deadpool Keychain</div>
+            <div class="prod-desc">Cute keychain with Deadpool design</div>
+            <div class="prod-price">₹249</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Deadpool Keychain','🔴','₹249')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Deadpool Keychain','₹249')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="b3.png" alt="Captain America" loading="lazy" width="200" height="200">
+            <div class="prod-badge">🔥</div>
+          </div>
+          <div class="prod-body">
+            <div class="prod-name">Captain America</div>
+            <div class="prod-desc">Patriotic superhero, handcrafted</div>
+            <div class="prod-price">₹99</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Captain America','🇺🇸','₹99')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Captain America','₹99')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="b4.png" alt="Football &amp; Basketball Keychain" loading="lazy" width="200"
+              height="200"></div>
+          <div class="prod-body">
+            <div class="prod-name">Football &amp; Basketball Keychain</div>
+            <div class="prod-desc">Sports keychains for the game lover</div>
+            <div class="prod-price">₹149</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Football Keychain','⚽','₹149')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Football Keychain','₹149')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="b5.png" alt="Earbuds cover" loading="lazy" width="200" height="200"></div>
+          <div class="prod-body">
+            <div class="prod-name">Earbuds cover</div>
+            <div class="prod-desc">Clever fox plush, handcrafted</div>
+            <div class="prod-price">₹149</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Earbuds cover','🦊','₹149')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Earbuds cover','₹149')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="b6.png" alt="B.M.W Keychain" loading="lazy" width="200" height="200"></div>
+          <div class="prod-body">
+            <div class="prod-name">B.M.W Keychain</div>
+            <div class="prod-desc">Luxury car keychain with BMW logo</div>
+            <div class="prod-price">₹149</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('B.M.W Keychain','🚗','₹149')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('B.M.W Keychain','₹149')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="b7.png" alt="Tulip Spider Edition" loading="lazy" width="200" height="200">
+          </div>
+          <div class="prod-body">
+            <div class="prod-name">Tulip Spider Edition</div>
+            <div class="prod-desc">Delicate tulip plush with spider details</div>
+            <div class="prod-price">₹729</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Tulip Spider Edition','🌷','₹729')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Tulip Spider Edition','₹729')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="b8.png" alt="Spider Keychain" loading="lazy" width="200" height="200"></div>
+          <div class="prod-body">
+            <div class="prod-name">Spider Keychain</div>
+            <div class="prod-desc">Handcrafted spider keychain with detailed design</div>
+            <div class="prod-price">₹179</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Spider Keychain','🕷️','₹179')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Spider Keychain','₹179')">Order Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card fade-up">
+          <div class="prod-img"><img src="b9.png" alt="Car Hanger" loading="lazy" width="200" height="200"></div>
+          <div class="prod-body">
+            <div class="prod-name">Car Hanger</div>
+            <div class="prod-desc">Handcrafted car hanger with detailed design</div>
+            <div class="prod-price">₹199</div>
+            <div class="prod-btns">
+              <button class="add-cart" onclick="addToCart('Car Hanger','🚗','₹199')">🛒 Cart</button>
+              <button class="buy-now" onclick="orderNow('Car Hanger','₹199')">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 3: GIFTS -->
+  <section class="section gift-bg" id="gifts">
+    <div class="section-header fade-up">
+      <div class="section-tag">🎁 Gift Collection</div>
+      <h2 class="section-title">Perfect Gifts</h2>
+      <p class="section-sub">Surprise someone special with handmade love</p>
+    </div>
+    <div class="gift-grid">
+      <div class="gift-card fade-up">
+        <div class="gift-img"><img src="gift1.png" alt="Birthday Bloom Box" loading="lazy" width="300" height="225">
+        </div>
+        <div class="gift-body">
+          <div class="gift-name">Birthday Bloom Box</div>
+          <div class="gift-desc">Curated crochet flowers in a gift box</div>
+          <div class="gift-price">₹999</div>
+          <div class="gift-btns">
+            <button class="add-cart" onclick="addToCart('Birthday Bloom Box','🎀','₹999')"
+              style="flex:1;border-radius:10px;padding:9px;font-size:11px">🛒 Add</button>
+            <button class="buy-now" onclick="orderNow('Birthday Bloom Box','₹999')"
+              style="flex:1;border-radius:10px">Order Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="gift-card fade-up">
+        <div class="gift-img"><img src="gift2.png" alt="Rose Surprise Set" loading="lazy" width="300" height="225">
+        </div>
+        <div class="gift-body">
+          <div class="gift-name">Rose Surprise Set</div>
+          <div class="gift-desc">Trio of handcrafted crochet roses</div>
+          <div class="gift-price">₹499</div>
+          <div class="gift-btns">
+            <button class="add-cart" onclick="addToCart('Rose Surprise Set','🌹','₹499')"
+              style="flex:1;border-radius:10px;padding:9px;font-size:11px">🛒 Add</button>
+            <button class="buy-now" onclick="orderNow('Rose Surprise Set','₹499')"
+              style="flex:1;border-radius:10px">Order Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="gift-card fade-up">
+        <div class="gift-img"><img src="gift3.png" alt="Pipe Cleaner Pot" loading="lazy" width="300" height="225"></div>
+        <div class="gift-body">
+          <div class="gift-name">Pipe Cleaner Pot</div>
+          <div class="gift-desc">Handcrafted pipe cleaner floral arrangement</div>
+          <div class="gift-price">₹499</div>
+          <div class="gift-btns">
+            <button class="add-cart" onclick="addToCart('Pipe Cleaner Pot','🧸','₹499')"
+              style="flex:1;border-radius:10px;padding:9px;font-size:11px">🛒 Add</button>
+            <button class="buy-now" onclick="orderNow('Pipe Cleaner Pot','₹499')"
+              style="flex:1;border-radius:10px">Order Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="gift-card fade-up">
+        <div class="gift-img"><img src="gift4.png" alt="Love &amp; Petals Set" loading="lazy" width="300" height="225">
+        </div>
+        <div class="gift-body">
+          <div class="gift-name">Love &amp; Petals Set</div>
+          <div class="gift-desc">Heart &amp; floral combo gift hamper</div>
+          <div class="gift-price">₹349</div>
+          <div class="gift-btns">
+            <button class="add-cart" onclick="addToCart('Love & Petals Set','💝','₹349')"
+              style="flex:1;border-radius:10px;padding:9px;font-size:11px">🛒 Add</button>
+            <button class="buy-now" onclick="orderNow('Love & Petals Set','₹349')"
+              style="flex:1;border-radius:10px">Order Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="gift-card fade-up">
+        <div class="gift-img"><img src="gift5.png" alt="Cute Bouquet" loading="lazy" width="300" height="225"></div>
+        <div class="gift-body">
+          <div class="gift-name">Cute Bouquet</div>
+          <div class="gift-desc">Vibrant mixed flowers in a tote</div>
+          <div class="gift-price">₹399</div>
+          <div class="gift-btns">
+            <button class="add-cart" onclick="addToCart('Cute Bouquet','🌈','₹399')"
+              style="flex:1;border-radius:10px;padding:9px;font-size:11px">🛒 Add</button>
+            <button class="buy-now" onclick="orderNow('Cute Bouquet','₹399')" style="flex:1;border-radius:10px">Order
+              Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="gift-card fade-up">
+        <div class="gift-img"><img src="gift6.png" alt="Rapunzel Lily" loading="lazy" width="300" height="225"></div>
+        <div class="gift-body">
+          <div class="gift-name">Rapunzel Lily</div>
+          <div class="gift-desc">Premium gifting for the stars in life</div>
+          <div class="gift-price">₹349</div>
+          <div class="gift-btns">
+            <button class="add-cart" onclick="addToCart('Rapunzel Lily','⭐','₹349')"
+              style="flex:1;border-radius:10px;padding:9px;font-size:11px">🛒 Add</button>
+            <button class="buy-now" onclick="orderNow('Rapunzel Lily','₹349')" style="flex:1;border-radius:10px">Order
+              Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- COUPLE SECTION -->
+  <section class="section couple-bg" id="couples">
+    <div class="section-header couple-header fade-up">
+      <div class="section-tag">💑 For Two Hearts</div>
+      <h2 class="section-title">Made for Each Other 💕</h2>
+      <p class="section-sub">Adorable couple sets — because love is handmade</p>
+    </div>
+    <div class="couple-grid">
+      <div class="couple-card fade-up">
+        <div class="couple-ribbon">Couple</div>
+        <div class="couple-img"><img src="c1.png" alt="Romeo &amp; Juliet Set" loading="lazy" width="200" height="200">
+        </div>
+        <div class="couple-body">
+          <div class="couple-name">Romeo &amp; Juliet Set</div>
+          <div class="couple-sub">His rose + her bouquet</div>
+          <div class="couple-price">₹299</div>
+          <div class="prod-btns">
+            <button class="add-cart" onclick="addToCart('Romeo & Juliet Set','🌹💐','₹299')">🛒 Cart</button>
+            <button class="buy-now" onclick="orderNow('Romeo & Juliet Set','₹299')">Order Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="couple-card fade-up">
+        <div class="couple-ribbon">Bestie</div>
+        <div class="couple-img"><img src="c2.png" alt="Heart Bouquet" loading="lazy" width="200" height="200"></div>
+        <div class="couple-body">
+          <div class="couple-name">Heart Bouquet</div>
+          <div class="couple-sub">Matching bear pair</div>
+          <div class="couple-price">₹349</div>
+          <div class="prod-btns">
+            <button class="add-cart" onclick="addToCart('Heart Bouquet','🧸🐻','₹349')">🛒 Cart</button>
+            <button class="buy-now" onclick="orderNow('Heart Bouquet','₹349')">Order Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="couple-card fade-up">
+        <div class="couple-ribbon">Couple</div>
+        <div class="couple-img"><img src="c3.png" alt="I &amp; You Set" loading="lazy" width="200" height="200"></div>
+        <div class="couple-body">
+          <div class="couple-name">I &amp; You Set</div>
+          <div class="couple-sub">Your special duo</div>
+          <div class="couple-price">₹299</div>
+          <div class="prod-btns">
+            <button class="add-cart" onclick="addToCart('I & You Set','💑','₹299')">🛒 Cart</button>
+            <button class="buy-now" onclick="orderNow('I & You Set','₹299')">Order Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="couple-card fade-up">
+        <div class="couple-ribbon">BFF</div>
+        <div class="couple-img"><img src="c4.png" alt="Multi Heart" loading="lazy" width="200" height="200"></div>
+        <div class="couple-body">
+          <div class="couple-name">Multi Heart</div>
+          <div class="couple-sub">Joy in every colour</div>
+          <div class="couple-price">₹749</div>
+          <div class="prod-btns">
+            <button class="add-cart" onclick="addToCart('Multi Heart','🌻🌷','₹749')">🛒 Cart</button>
+            <button class="buy-now" onclick="orderNow('Multi Heart','₹749')">Order Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="couple-card fade-up">
+        <div class="couple-ribbon">Couple</div>
+        <div class="couple-img"><img src="c5.png" alt="Rose Keychain" loading="lazy" width="200" height="200"></div>
+        <div class="couple-body">
+          <div class="couple-name">Rose Keychain</div>
+          <div class="couple-sub">The cutest duo ever</div>
+          <div class="couple-price">₹149</div>
+          <div class="prod-btns">
+            <button class="add-cart" onclick="addToCart('Rose Keychain','🌹','₹149')">🛒 Cart</button>
+            <button class="buy-now" onclick="orderNow('Rose Keychain','₹149')">Order Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="couple-card fade-up">
+        <div class="couple-ribbon">Anniversary</div>
+        <div class="couple-img"><img src="c6.png" alt="Pinky Promise" loading="lazy" width="200" height="200"></div>
+        <div class="couple-body">
+          <div class="couple-name">Pinky Promise</div>
+          <div class="couple-sub">Celebrate forever together</div>
+          <div class="couple-price">₹549</div>
+          <div class="prod-btns">
+            <button class="add-cart" onclick="addToCart('Pinky Promise','💍🌹','₹549')">🛒 Cart</button>
+            <button class="buy-now" onclick="orderNow('Pinky Promise','₹549')">Order Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 4: CUSTOMISE -->
+  <section class="section custom-bg" id="customise">
+    <div class="section-header fade-up">
+      <div class="section-tag">🎨 Build Yours</div>
+      <h2 class="section-title">Customise with Us ✨</h2>
+      <p class="section-sub">Design your dream crochet creation from scratch</p>
+    </div>
+
+    <div class="custom-container fade-up">
+
+      <!-- Step 1: Upload Photo -->
+      <div class="custom-step">
+        <div class="step-label">
+          <div class="step-num">1</div>
+          <div class="step-title">Upload Your Inspiration Photo</div>
+        </div>
+        <div class="upload-area" id="uploadArea">
+          <input type="file" id="photoUpload" accept="image/*,image/heic,image/heif" onchange="previewPhoto(this)"
+            capture="environment">
+          <div class="upload-icon">📷</div>
+          <div class="upload-text">Tap to upload a photo</div>
+          <div class="upload-hint">JPG, PNG, HEIC from gallery or camera</div>
+        </div>
+        <div class="upload-progress" id="uploadProgress">
+          <div class="upload-progress-bar" id="uploadProgressBar"></div>
+        </div>
+        <div class="upload-preview" id="uploadPreview">
+          <img id="previewImg" src="" alt="preview">
+          <div style="font-size:11px;color:var(--teal-dark);font-weight:600;margin-top:5px">✅ Photo ready! It will be
+            shared via WhatsApp.</div>
+        </div>
+        <!-- WhatsApp image sending guide -->
+        <div class="wa-send-guide" id="waSendGuide">
+          <h4>📱 How to send your photo via WhatsApp</h4>
+          <ol>
+            <li>After clicking "Send Custom Order via WhatsApp", the chat will open.</li>
+            <li>Type your message or just hit send.</li>
+            <li>Then tap the 📎 attachment icon and select your saved inspiration photo.</li>
+            <li>Send it — we'll take it from there! 🌸</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Step 2: Describe -->
+      <div class="custom-step">
+        <div class="step-label">
+          <div class="step-num">2</div>
+          <div class="step-title">Describe Your Product</div>
+        </div>
+        <textarea class="describe-box"
+          placeholder="Tell us what you'd like — e.g., 'I want a pink rose bouquet with 3 roses and 2 lilies, wrapped with a ribbon…'"
+          id="describeText"></textarea>
+      </div>
+
+      <!-- Step 3: Choose Products -->
+      <div class="custom-step">
+        <div class="step-label">
+          <div class="step-num">3</div>
+          <div class="step-title">Select Products to Include</div>
+        </div>
+        <div class="product-chips" id="productChips">
+          <div class="chip" onclick="toggleChip(this)" data-product="Rose">🌹 Rose</div>
+          <div class="chip" onclick="toggleChip(this)" data-product="Lily">🌷 Lily</div>
+          <div class="chip" onclick="toggleChip(this)" data-product="Lotus">🪷 Lotus</div>
+          <div class="chip" onclick="toggleChip(this)" data-product="Kitchen Animal">🐱 Kitchen Animal</div>
+          <div class="chip" onclick="toggleChip(this)" data-product="Flower Pot">🪴 Flower Pot</div>
+          <div class="chip" onclick="toggleChip(this)" data-product="Rose Pot">🌹🪴 Rose Pot</div>
+          <div class="chip" onclick="toggleChip(this)" data-product="Small Rose">🌹 Small Rose</div>
+          <div class="chip" onclick="toggleChip(this)" data-product="Large Rose">🌹🌹 Large Rose</div>
+          <div class="chip" onclick="toggleChip(this)" data-product="Lily + Rose">🌷🌹 Lily + Rose</div>
+        </div>
+      </div>
+
+      <!-- Step 4: Quantities -->
+      <div class="custom-step" id="qtySection" style="display:none">
+        <div class="step-label">
+          <div class="step-num">4</div>
+          <div class="step-title">Choose Quantity for Each</div>
+        </div>
+        <div class="qty-row" id="qtyRow"></div>
+      </div>
+
+      <!-- Step 5: Colour -->
+      <div class="custom-step">
+        <div class="step-label">
+          <div class="step-num">5</div>
+          <div class="step-title">Choose Your Colours</div>
+        </div>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#e8192c" onclick="toggleSwatch(this,'Red')" title="Red"></div>
+          <div class="swatch" style="background:#f8f8f8;border:2px solid #ddd" onclick="toggleSwatch(this,'White')"
+            title="White"></div>
+          <div class="swatch" style="background:#f9d835" onclick="toggleSwatch(this,'Yellow')" title="Yellow"></div>
+          <div class="swatch" style="background:#f4a7b9" onclick="toggleSwatch(this,'Pink')" title="Pink"></div>
+          <div class="swatch" style="background:#4fc3f7" onclick="toggleSwatch(this,'Blue')" title="Blue"></div>
+          <div class="swatch" style="background:#8d6e63" onclick="toggleSwatch(this,'Brown')" title="Brown"></div>
+          <div class="swatch" style="background:#a8e063" onclick="toggleSwatch(this,'Green')" title="Green"></div>
+          <div class="swatch" style="background:#ce93d8" onclick="toggleSwatch(this,'Purple')" title="Purple"></div>
+          <div class="swatch" style="background:linear-gradient(135deg,#f9d835,#e8192c,#4fc3f7)"
+            onclick="toggleSwatch(this,'Multicolor')" title="Multicolor"></div>
+        </div>
+        <div style="font-size:12px;color:var(--text-mid);margin-bottom:8px;font-weight:600">Or type your own colour:
+        </div>
+        <input class="color-input" type="text" placeholder="e.g. Sky blue, Coral, Mint green…" id="customColor">
+      </div>
+
+      <!-- Submit -->
+      <button class="custom-submit" onclick="submitCustom()">
+        💬 Send Custom Order via WhatsApp
+      </button>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 5: INSTAGRAM / HAPPY CUSTOMERS -->
+  <section class="section ig-bg" id="instagram">
+    <div class="section-header fade-up">
+      <div class="section-tag">📸 Our Happy Family</div>
+      <h2 class="section-title">Happy Customers 💕</h2>
+      <p class="section-sub">See our creations in real homes &amp; real smiles</p>
+    </div>
+
+    <!-- Live Instagram Feed via Elfsight (lazy loaded) -->
+    <div class="ig-feed-wrapper fade-up">
+      <div class="ig-feed-header">
+        <div class="ig-avatar">🧶</div>
+        <div class="ig-profile-info">
+          <div class="ig-handle">@crozycrochet_</div>
+          <div class="ig-tagline">Handmade with love 💕 | India</div>
+        </div>
+      </div>
+      <!-- Elfsight Instagram Feed — loaded lazily via IntersectionObserver -->
+      <div id="elfsightHolder">
+        <div class="ig-note">✨ Live Instagram feed — tap any tile to visit our page!</div>
+      </div>
+    </div>
+
+    <a href="https://www.instagram.com/crozycrochet_" target="_blank" rel="noopener" class="ig-follow-btn fade-up">
+      📸 Follow @crozycrochet_ on Instagram
+    </a>
+    <a href="https://wa.me/919537967458?text=Hi%20Crozy%20Crochet!%20I%20saw%20your%20beautiful%20work%20on%20Instagram%20%F0%9F%A7%B6%F0%9F%8C%B8"
+      target="_blank" rel="noopener" class="dm-btn fade-up">
+      💬 Chat with us on WhatsApp
+    </a>
+
+    <!-- Testimonials -->
+    <div style="margin-top:32px">
+      <div class="section-tag" style="display:inline-block;margin-bottom:16px">⭐ Reviews</div>
+    </div>
+    <div class="testimonials fade-up">
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <div class="testi-text">"Ordered a custom rose bouquet for my mom's birthday. She cried happy tears! Absolutely
+          beautiful work, every petal is perfect."</div>
+        <div class="testi-name">— Priya S., Surat</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <div class="testi-text">"Got the couple bear set for my anniversary. My partner loved it so much. Worth every
+          rupee and more!"</div>
+        <div class="testi-name">— Rahul M., Vadodara</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <div class="testi-text">"The gift box was so beautifully packed. Crozy Crochet truly puts love in every stitch.
+          Will order again!"</div>
+        <div class="testi-name">— Anjali K., Mumbai</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">🧶 Crozy Crochet</div>
+    <div class="footer-sub">Handmade with love, one stitch at a time 💕</div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#gifts">Gifts</a>
+      <a href="#couples">Couples</a>
+      <a href="#customise">Customise</a>
+      <a href="https://www.instagram.com/crozycrochet_" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="footer-copy">© 2025 Crozy Crochet. All rights reserved. Made in India 🇮🇳</div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer" role="dialog" aria-label="Shopping Cart">
+    <div class="cart-head">
+      <h3>🛒 Your Cart</h3>
+      <button class="close-cart" onclick="closeCart()" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <div style="font-size:48px;margin-bottom:12px">🧺</div>
+        <div>Your cart is empty</div>
+        <div style="font-size:12px;margin-top:6px;color:#aaa">Add some handmade love!</div>
+      </div>
+    </div>
+    <div class="cart-foot" id="cartFoot" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+      <button class="checkout-btn" onclick="checkoutCart()">💬 Order via WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- CUSTOM ORDER MODAL -->
+  <div class="modal-overlay" id="successModal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal-icon">🎉</div>
+      <h3>Custom Order Ready!</h3>
+      <p>Your request will be sent to Crozy Crochet via WhatsApp. After sending the message, attach your inspiration
+        photo in the chat!</p>
+      <div class="modal-actions">
+        <button class="modal-btn-ig" onclick="sendToDM()">💬 Send via WhatsApp</button>
+        <button class="modal-btn-cancel" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER NOW MODAL -->
+  <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal-icon">🧶</div>
+      <h3>Order Now</h3>
+      <div class="modal-prod-name" id="orderProdName"></div>
+      <div class="modal-prod-price" id="orderProdPrice"></div>
+      <div class="modal-qty-row">
+        <span class="modal-qty-label">Quantity</span>
+        <div class="modal-qty-ctrl">
+          <button class="modal-qty-btn" onclick="changeOrderQty(-1)" aria-label="Decrease quantity">−</button>
+          <div class="modal-qty-val" id="orderQtyVal">1</div>
+          <button class="modal-qty-btn" onclick="changeOrderQty(1)" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+      <input class="modal-name-input" type="text" id="orderCustomerName" placeholder="Your name (optional) 😊"
+        autocomplete="given-name">
+      <div class="modal-actions">
+        <button class="modal-btn-ig" onclick="sendOrderDM()">💬 Order via WhatsApp</button>
+        <button class="modal-btn-cancel" onclick="closeOrderModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHATSAPP STICKY BUTTON -->
+  <a href="https://wa.me/919537967458?text=Hi%20Crozy%20Crochet!%20%F0%9F%A7%B6%20I%20would%20like%20to%20place%20an%20order%20%F0%9F%A4%9D%20Please%20help%20me!"
+    class="wa-sticky" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    💬 WhatsApp Us
+  </a>
+
+  <script>
+    // ===== CONFIG =====
+    const WA_NUMBER = '919537967458';
+
+    function openWhatsApp(msg) {
+      window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    }
+
+    // ===== NAVBAR SCROLL SHRINK =====
+    const nav = document.getElementById('mainNav');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 60);
+      lastScroll = y;
+    }, { passive: true });
+
+    // ===== CART =====
+    let cart = [];
+    let selectedSwatches = [];
+    let customMsg = '';
+
+    function addToCart(name, icon, price) {
+      cart.push({ name, icon, price });
+      updateCart();
+      showToast('✅ ' + name + ' added to cart!');
+    }
+
+    function updateCart() {
+      document.getElementById('cartCount').textContent = cart.length;
+      const container = document.getElementById('cartItems');
+      const foot = document.getElementById('cartFoot');
+      if (cart.length === 0) {
+        container.innerHTML = '<div class="cart-empty"><div style="font-size:48px;margin-bottom:12px">🧺</div><div>Your cart is empty</div><div style="font-size:12px;margin-top:6px;color:#aaa">Add some handmade love!</div></div>';
+        foot.style.display = 'none';
+        return;
+      }
+      foot.style.display = 'block';
+      container.innerHTML = cart.map((item, i) => `
+        <div class="cart-item">
+          <div class="cart-item-icon">${item.icon}</div>
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">${item.price}</div>
+          </div>
+          <button class="cart-item-remove" onclick="removeFromCart(${i})" aria-label="Remove ${item.name}">🗑️</button>
+        </div>
+      `).join('');
+      const total = cart.map(i => parseInt(i.price.replace(/[₹,]/g, ''))).reduce((a, b) => a + b, 0);
+      document.getElementById('cartTotal').textContent = '₹' + total.toLocaleString('en-IN');
+    }
+
+    function removeFromCart(i) { cart.splice(i, 1); updateCart(); }
+    function openCart() { document.getElementById('cartOverlay').classList.add('open'); document.getElementById('cartDrawer').classList.add('open'); }
+    function closeCart() { document.getElementById('cartOverlay').classList.remove('open'); document.getElementById('cartDrawer').classList.remove('open'); }
+
+    // ===== TOAST =====
+    let toastTimer;
+    function showToast(msg) {
+      clearTimeout(toastTimer);
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+    }
+
+    // ===== TABS =====
+    function switchTab(id, btn) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
+      if (btn) btn.classList.add('active');
+      // Re-observe newly visible cards
+      requestAnimationFrame(() => {
+        document.querySelectorAll('#tab-' + id + ' .fade-up').forEach(el => {
+          if (!el.classList.contains('visible')) observer.observe(el);
+        });
+      });
+    }
+
+    // ===== OPTIMIZED SCROLL ANIMATIONS =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target); // fire once only = no jank
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ===== FAST IMAGE LOADING =====
+    // Images are visible by default (no opacity:0) — browser shows them as bytes arrive.
+    // Just add decoding=async so image decode never blocks the main thread.
+    document.querySelectorAll('img').forEach(img => {
+      img.decoding = 'async';
+    });
+    // Mark prod-img parents as done immediately (removes any leftover shimmer)
+    document.querySelectorAll('.prod-img, .gift-img, .couple-img').forEach(el => {
+      el.classList.add('img-done');
+    });
+
+    // ===== PHOTO UPLOAD (optimised + fixed) =====
+    function previewPhoto(input) {
+      const file = input.files[0];
+      if (!file) return;
+
+      // Validate type
+      const allowed = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/heic', 'image/heif'];
+      if (!allowed.includes(file.type) && !file.name.match(/\.(heic|heif|jpg|jpeg|png|gif|webp)$/i)) {
+        showToast('⚠️ Please select a valid image file.');
+        return;
+      }
+
+      // Show progress animation
+      const progress = document.getElementById('uploadProgress');
+      const bar = document.getElementById('uploadProgressBar');
+      progress.classList.add('active');
+      bar.style.width = '0%';
+
+      const reader = new FileReader();
+
+      reader.onprogress = (e) => {
+        if (e.lengthComputable) {
+          bar.style.width = Math.round((e.loaded / e.total) * 90) + '%';
+        }
+      };
+
+      reader.onload = (e) => {
+        bar.style.width = '100%';
+        setTimeout(() => { progress.classList.remove('active'); bar.style.width = '0%'; }, 400);
+
+        const preview = document.getElementById('uploadPreview');
+        const previewImg = document.getElementById('previewImg');
+        previewImg.src = e.target.result;
+        preview.style.display = 'block';
+
+        // Show WhatsApp guide
+        document.getElementById('waSendGuide').classList.add('show');
+
+        showToast('📷 Photo ready! Send it with your WhatsApp order.');
+      };
+
+      reader.onerror = () => {
+        progress.classList.remove('active');
+        showToast('⚠️ Could not read file. Please try another image.');
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    // ===== CHIPS =====
+    function toggleChip(el) {
+      el.classList.toggle('selected');
+      updateQtySection();
+    }
+
+    function updateQtySection() {
+      const selected = [...document.querySelectorAll('#productChips .chip.selected')];
+      const qtySection = document.getElementById('qtySection');
+      const qtyRow = document.getElementById('qtyRow');
+      if (selected.length === 0) { qtySection.style.display = 'none'; return; }
+      qtySection.style.display = 'block';
+      qtyRow.innerHTML = selected.map(chip => {
+        const prod = chip.dataset.product;
+        const safeId = prod.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+        return `
+          <div class="qty-item">
+            <div class="qty-name">${chip.textContent}</div>
+            <div class="qty-ctrl">
+              <button class="qty-btn" onclick="changeQty('${safeId}',-1)" aria-label="Decrease">−</button>
+              <div class="qty-val" id="qty_${safeId}">1</div>
+              <button class="qty-btn" onclick="changeQty('${safeId}',1)" aria-label="Increase">+</button>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    function changeQty(id, delta) {
+      const el = document.getElementById('qty_' + id);
+      let val = parseInt(el.textContent) + delta;
+      if (val < 1) val = 1;
+      if (val > 20) val = 20;
+      el.textContent = val;
+    }
+
+    // ===== SWATCHES =====
+    function toggleSwatch(el, color) {
+      el.classList.toggle('selected');
+      if (el.classList.contains('selected')) {
+        if (!selectedSwatches.includes(color)) selectedSwatches.push(color);
+      } else {
+        selectedSwatches = selectedSwatches.filter(c => c !== color);
+      }
+    }
+
+    // ===== CUSTOM SUBMIT =====
+    function submitCustom() {
+      const desc = document.getElementById('describeText').value.trim();
+      const selected = [...document.querySelectorAll('#productChips .chip.selected')].map(c => c.dataset.product);
+      const customColor = document.getElementById('customColor').value.trim();
+      const allColors = [...selectedSwatches];
+      if (customColor) allColors.push(customColor);
+
+      if (!desc && selected.length === 0) {
+        showToast('⚠️ Please describe your order or select products!');
+        return;
+      }
+
+      let msg = 'Hello Crozy Crochet! 🧶 I would like to place a custom order 😊\n\n';
+      if (desc) msg += '📝 Description: ' + desc + '\n\n';
+      if (selected.length > 0) {
+        msg += '🌸 Products:\n';
+        selected.forEach(p => {
+          const safeId = p.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+          const qtyEl = document.getElementById('qty_' + safeId);
+          const qty = qtyEl ? qtyEl.textContent : '1';
+          msg += '  • ' + p + ' × ' + qty + '\n';
+        });
+        msg += '\n';
+      }
+      if (allColors.length > 0) msg += '🎨 Colours: ' + allColors.join(', ') + '\n\n';
+
+      const previewImg = document.getElementById('previewImg');
+      if (previewImg && previewImg.src && previewImg.src !== window.location.href) {
+        msg += '📷 I have an inspiration photo — I will attach it in this chat!\n\n';
+      }
+
+      msg += 'Please let me know the next steps. Thank you! 🙏';
+      customMsg = msg;
+      document.getElementById('successModal').classList.add('open');
+    }
+
+    function sendToDM() { openWhatsApp(customMsg); closeModal(); }
+    function closeModal() { document.getElementById('successModal').classList.remove('open'); }
+
+    // ===== ORDER NOW MODAL =====
+    let _orderProd = '', _orderPrice = '';
+
+    function orderNow(name, price) {
+      _orderProd = name; _orderPrice = price;
+      document.getElementById('orderProdName').textContent = name;
+      document.getElementById('orderProdPrice').textContent = price;
+      document.getElementById('orderQtyVal').textContent = '1';
+      document.getElementById('orderCustomerName').value = '';
+      document.getElementById('orderModal').classList.add('open');
+    }
+
+    function changeOrderQty(delta) {
+      const el = document.getElementById('orderQtyVal');
+      let val = parseInt(el.textContent) + delta;
+      if (val < 1) val = 1;
+      if (val > 50) val = 50;
+      el.textContent = val;
+    }
+
+    function sendOrderDM() {
+      const qty = document.getElementById('orderQtyVal').textContent;
+      const name = document.getElementById('orderCustomerName').value.trim();
+      let msg = 'Hello Crozy Crochet! 🧶 I would like to place an order 😊\n\n';
+      msg += '🧶 Product: ' + _orderProd + '\n';
+      msg += '💰 Price: ' + _orderPrice + '\n';
+      msg += '🔢 Quantity: ' + qty + '\n';
+      if (name) msg += '👤 Name: ' + name + '\n';
+      msg += '\nPlease let me know the next steps. Thank you! 🙏';
+      openWhatsApp(msg);
+      closeOrderModal();
+    }
+
+    function closeOrderModal() { document.getElementById('orderModal').classList.remove('open'); }
+
+    // ===== CART CHECKOUT VIA WHATSAPP =====
+    function checkoutCart() {
+      if (cart.length === 0) return;
+      let msg = 'Hello Crozy Crochet! 🧶 I would like to place an order 😊\n\n';
+      msg += '🛒 My Cart:\n';
+      cart.forEach((item, idx) => { msg += (idx + 1) + '. ' + item.name + ' — ' + item.price + '\n'; });
+      const total = cart.map(i => parseInt(i.price.replace(/[₹,]/g, ''))).reduce((a, b) => a + b, 0);
+      msg += '\n💳 Total: ₹' + total.toLocaleString('en-IN') + '\n';
+      msg += '\nPlease confirm availability and share payment details. Thank you! 🙏';
+      openWhatsApp(msg);
+      closeCart();
+    }
+
+    // ===== LAZY LOAD ELFSIGHT (only when section is visible) =====
+    const igSection = document.getElementById('instagram');
+    if (igSection) {
+      const elfsightObs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          elfsightObs.disconnect();
+          // Load Elfsight script only when needed
+          const s = document.createElement('script');
+          s.src = 'https://elfsightcdn.com/platform.js';
+          s.async = true;
+          s.onload = () => {
+            const holder = document.getElementById('elfsightHolder');
+            if (holder) {
+              // Keep fallback grid visible until Elfsight loads
+              const widget = document.createElement('div');
+              widget.className = 'elfsight-app-8102f599-9128-4051-afed-ff701b42a541';
+              widget.setAttribute('data-elfsight-app-lazy', '');
+              holder.insertBefore(widget, holder.firstChild);
+            }
+          };
+          document.head.appendChild(s);
+        }
+      }, { rootMargin: '300px' });
+      elfsightObs.observe(igSection);
+    }
+
+    // ===== CLOSE MODALS ON BACKGROUND CLICK =====
+    document.getElementById('successModal').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
+    });
+    document.getElementById('orderModal').addEventListener('click', function (e) {
+      if (e.target === this) closeOrderModal();
+    });
+
+    // ===== KEYBOARD: CLOSE MODAL ON ESC =====
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeModal(); closeOrderModal(); closeCart(); }
+    });
+
+    // ===== PERFORMANCE: reduce animations on scroll =====
+    let scrollTicking = false;
+    document.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        requestAnimationFrame(() => { scrollTicking = false; });
+        scrollTicking = true;
+      }
+    }, { passive: true });
+  </script>
+</body>
+
+</html>
